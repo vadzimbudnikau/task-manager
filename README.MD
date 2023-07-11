@@ -55,6 +55,3 @@ pip freeze > requirements.txt
 Запускаем сервер
 
 python manage.py runserver
-В проекте так же присутствуют файл Procfile и runtime.txt, для публикации проекта на heroku.com
-
-База данных должна быть в файле .gitignore, но для этого примера я ее оттуда удалил, чтобы был пример ToDo задач
