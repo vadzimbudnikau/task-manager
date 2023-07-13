@@ -1,6 +1,6 @@
 ## Task Manager - Django-based ToDo Manager
 
-This is a simple ToDo manager implemented using the Django web framework. The web interface is built using the Semantic UI framework (https://semantic-ui.com/).
+This is a simple ToDo manager implemented using the Django web framework. The web interface is built using the [Semantic UI framework](https://semantic-ui.com/).
 
 ## Project Setup
 Create a new project directory and navigate to it:
