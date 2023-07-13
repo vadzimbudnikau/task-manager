@@ -1,57 +1,62 @@
-Простой ToDo менеджер, реализованный на веб-фреймворке Django В качестве веб-интерфейса использован фреймворк Semantic UI https://semantic-ui.com/
+## Task Manager - Django-based ToDo Manager
 
-Создаем папку для нового проекта и переходим в нее
+This is a simple ToDo manager implemented using the Django web framework. The web interface is built using the Semantic UI framework (https://semantic-ui.com/).
 
-md ToDoDjango & cd ToDoDjango
-Устанавливаем и активируем виртуальное окружение
+## Project Setup
+Create a new project directory and navigate to it:
+    mkdir ToDoDjango && cd ToDoDjango
 
-python3 -m venv venv
-. venv/bin/activate
-Инициализируем git
+Set up and activate a virtual environment:
+    python3 -m venv venv
+    source venv/bin/activate
 
-git init
-Устанавливаем модули
+Initialize a new Git repository:
+    git init
 
-pip install django gunicorn
-Создаем проект todoapp и переходим в него
+Install the required modules:
+    pip install django gunicorn
 
-django-admin startproject todoapp & cd todoapp
-Создадим приложение todolist
+Create a Django project named todoapp and navigate to it:
+    django-admin startproject todoapp && cd todoapp
 
-python manage.py startapp todolist
-Зарегистрируем приложение в файле settings.py
+Create a new application named todolist:
+    python manage.py startapp todolist
 
-INSTALLED_APPS = [
-...,
-todolist,
+Register the todolist application in the settings.py file:
+    INSTALLED_APPS = [
+    ...,
+    'todolist',
 ]
 
-Укажем локализацию и часовой пояс в файле settings.py
+Specify the localization and time zone in the settings.py file:
+    LANGUAGE_CODE = 'en-us'
+    TIME_ZONE = '...'
 
-LANGUAGE_CODE = 'ru-ru'
-TIME_ZONE = 'Europe/Moscow'
-Добавим папку шаблонов в settings.py
+Add the templates directory to the settings.py file:
+    TEMPLATES = [
+    {
+        ...,
+        'DIRS': ['templates'],
+    },
+]
 
-TEMPLATES = [
-{...,
-'DIRS': ['templates'],
-}]
-Структура файлов и папок
+Create the necessary directory structure:
+    mkdir templates
+    mkdir todolist/static/css
+    echo .> .gitignore
+    echo .> templates/layout.html
+    echo .> templates/index.html
+    echo .> todolist/static/todolist/css/style.css
+    echo .> README.MD
+    echo .> todolist/urls.py
 
-md templates
-mkdir todolist\static\css
-echo .> .gitignore
-echo .> templates/layout.html
-echo .> templates/index.html
-echo .> todolist/static/todolist/css/style.css
-echo .> README.MD
-echo .> todolist/urls.py
-Подтянем всю статику в папку static нашего проекта
+Collect all the static files into the project's static directory:
+    python manage.py collectstatic
 
-python manage.py collectstatic
-Создаем файл с зависимостями проекта
+Create a file containing the project's dependencies:
+    pip freeze > requirements.txt
 
-pip freeze > requirements.txt
-Запускаем сервер
+Run the server:
+    python manage.py runserver
 
-python manage.py runserver
+This will start the server, and you can access the Task Manager application by visiting the provided URL.
